@@ -34,12 +34,12 @@ func (dfs *DepthFirstSearch) ContainsState(i *Node) bool {
 	return false
 }
 
-func (dfs *DepthFirstSearch) Empty() bool {
+func (dfs *DepthFirstSearch) IsEmpty() bool {
 	return len(dfs.Frontier) == 0
 }
 
 func (dfs *DepthFirstSearch) Remove() (*Node, error) {
-	if len(dfs.Frontier) > 0 {
+	if !dfs.IsEmpty() {
 		if dfs.Game.Debug {
 			fmt.Println("Frontier before remove:")
 			for _, x := range dfs.Frontier {
@@ -67,7 +67,7 @@ func (dfs *DepthFirstSearch) Solve() {
 	dfs.Game.CurrentNode = &start
 
 	for {
-		if dfs.Empty() {
+		if dfs.IsEmpty() {
 			return
 		}
 
