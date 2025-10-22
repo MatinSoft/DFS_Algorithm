@@ -62,7 +62,7 @@ func (m *Maze) printMaze() {
 
 		for c, col := range row {
 			if col.wall {
-				fmt.Print("b")
+				fmt.Print("\u2588")
 			} else if m.Start.Row == col.State.Row && m.Start.Col == col.State.Col {
 				fmt.Print("A")
 			} else if m.Goal.Row == col.State.Row && m.Goal.Col == col.State.Col {
