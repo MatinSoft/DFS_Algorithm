@@ -109,6 +109,7 @@ func (dfs *DepthFirstSearch) Solve() {
 				Cells:   cells,
 			}
 			dfs.Game.Explored = append(dfs.Game.Explored, currentNode.State)
+			break
 		}
 
 		dfs.Game.Explored = append(dfs.Game.Explored, currentNode.State)
